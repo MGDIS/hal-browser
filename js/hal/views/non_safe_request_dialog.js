@@ -1,8 +1,12 @@
 HAL.Views.NonSafeRequestDialog = Backbone.View.extend({
   initialize: function(opts) {
     this.href = opts.href;
+    this.method = opts.method;
+    this.body = opts.body;
     this.vent = opts.vent;
     this.uriTemplate = uritemplate(this.href);
+    this.schema = opts.schema;
+    this.target = opts.target;
     _.bindAll(this, 'submitQuery');
   },
 
@@ -37,14 +41,20 @@ HAL.Views.NonSafeRequestDialog = Backbone.View.extend({
   },
 
   render: function(opts) {
-    var headers = HAL.client.getHeaders(),
+    var headers = HAL.client.getDefaultHeaders(),
         headersString = '';
 
     _.each(headers, function(value, name) {
       headersString += name + ': ' + value + '\n';
     });
 
-    this.$el.html(this.template({ href: this.href, user_defined_headers: headersString }));
+    this.$el.html(this.template({
+        href: this.href,
+        method: this.method,
+        body: this.body,
+        user_defined_headers: headersString,
+        schema: this.schema
+    }));
     this.$el.modal();
     return this;
   },

@@ -30,7 +30,7 @@ HAL.Views.EmbeddedResources = Backbone.View.extend({
 
     _.each(resourceViews, function(view) {
       view.render();
-      self.$el.append(view.el);
+      self.$el.children(0).append(view.el);
     });
 
 

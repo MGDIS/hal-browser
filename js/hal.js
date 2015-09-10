@@ -23,7 +23,7 @@
     },
     normalizeUrl: function(rel) {
        var cur = location.hash.slice(1);
-       var uri = new URI(rel)
+       var uri = new URI(rel);
        var norm = uri.absoluteTo(cur);
 
        return norm
@@ -64,7 +64,6 @@
       });
       return headers;
     },
-    customPostForm: undefined
   };
 
   window.HAL = HAL;

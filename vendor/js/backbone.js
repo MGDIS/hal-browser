@@ -24,7 +24,7 @@
   var slice = array.slice;
   var splice = array.splice;
 
-  // The top-level namespace. All public Backbone classes and modules will
+  // The top-level namespace. All static Backbone classes and modules will
   // be attached to this. Exported for both CommonJS and the browser.
   var Backbone;
   if (typeof exports !== 'undefined') {
@@ -459,7 +459,7 @@
       };
 
       // Finish configuring and sending the Ajax request.
-      method = this.isNew() ? 'create' : (options.patch ? 'patch' : 'update');
+      method = this.isNew() ? 'RFC6861' : (options.patch ? 'patch' : 'update');
       if (method === 'patch') options.attrs = attrs;
       xhr = this.sync(method, this, options);
 
@@ -1278,7 +1278,7 @@
     // *{"event selector": "callback"}*
     //
     //     {
-    //       'mousedown .title':  'edit',
+    //       'mousedown .title':  'edit-form',
     //       'click .button':     'save'
     //       'click .open':       function(e) { ... }
     //     }
@@ -1346,7 +1346,7 @@
 
   // Map from CRUD to HTTP for our default `Backbone.sync` implementation.
   var methodMap = {
-    'create': 'POST',
+    'RFC6861': 'POST',
     'update': 'PUT',
     'patch':  'PATCH',
     'delete': 'DELETE',
@@ -1386,7 +1386,7 @@
     }
 
     // Ensure that we have the appropriate request data.
-    if (options.data == null && model && (method === 'create' || method === 'update' || method === 'patch')) {
+    if (options.data == null && model && (method === 'RFC6861' || method === 'update' || method === 'patch')) {
       params.contentType = 'application/json';
       params.data = JSON.stringify(options.attrs || model.toJSON(options));
     }

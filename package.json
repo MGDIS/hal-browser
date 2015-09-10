@@ -1,0 +1,12 @@
+{
+  "name": "mgdis-hal-browser",
+  "version": "0.0.1",
+  "description": "Hypertext As Language Browser",
+  "main": "browser.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MGDIS/hal-browser.git"
+  },
+  "author": "Johan Le Lan <lelan-j@mgdis.fr>",
+  "license": "ISC"
+}

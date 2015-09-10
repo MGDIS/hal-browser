@@ -6,7 +6,7 @@ HAL.Views.Explorer = Backbone.View.extend({
     this.resourceView = new HAL.Views.Resource({ vent: this.vent });
   },
 
-  className: 'explorer span6',
+  className: 'explorer span11',
 
   render: function() {
     this.navigationView.render();
@@ -18,6 +18,6 @@ HAL.Views.Explorer = Backbone.View.extend({
   },
 
   template: function() {
-    return '<h1>Explorer</h1>';
+    return '<details open><summary class="section">Explorer</summary></details>';
   }
 });

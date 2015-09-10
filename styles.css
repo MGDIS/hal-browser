@@ -26,7 +26,44 @@ html, body, #browser, .hal-browser { height: 100%; }
   box-shadow: none;
 }
 
+.brand {
+    display: block;
+    float: left;
+    padding: 10px 20px 10px;
+    margin-left: -20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #777777;
+    text-shadow: 0 1px 0 #ffffff;
+    line-height: 1px;
+}
+
+.section {
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+    font-size: 31.5px;
+}
+
+.sous-section {
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+    font-size: 24.5px;
+}
+
 .inspector { height: 100%; }
+
+.vertical-text {
+    transform: rotate(90deg);
+    transform-origin: center;
+}
 
 .documentation { height: 100%; }
 .documentation iframe { width: 100%; height: 100%; }
@@ -55,7 +92,7 @@ body table.table {
 
 .ajax-loader {
   vertical-align: middle;
-  background-image: url("./vendor/img/ajax-loader.gif");
+  background-image: url("vendor/img/ajax-loader.gif");
   background-repeat: no-repeat;
   width: 16px;
   height: 16px;
