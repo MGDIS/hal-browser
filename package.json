@@ -1,6 +1,6 @@
 {
   "name": "mgdis-hal-browser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hypertext As Language Browser",
   "main": "browser.html",
   "repository": {
