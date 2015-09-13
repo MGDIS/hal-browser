@@ -61,8 +61,8 @@
             </tr>
             </thead>
             <tbody>
-            <% _.each(links, function(obj, rel) { %>
-            <% if ($.isArray(obj)) { %>
+            <% _.each(links, function(obj, rel) { if (!obj) return; %>
+            <% if ($.isArray(obj) && obj) { %>
             <% _.each(obj, function(link, i) { %>
             <tr>
                 <td><strong><%= HAL.truncateIfUrl(rel) %></strong></td>
